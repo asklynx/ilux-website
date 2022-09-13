@@ -19,6 +19,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/offer.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
+    <link href="css/modal.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -157,20 +158,19 @@
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
                                             data-target="#ordertiktokModal"> Boost Now! </button>
 
-                                        <!-- Facebook Modal -->
+                                        <!-- Tiktok Modal -->
                                         <div class="modal fade" id="ordertiktokModal" tabindex="-1"
                                             aria-labelledby="ordertiktokModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="tiktokModalLabel">TIKTOK</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <!--Order Form FB-->
+                                                        <!--Order Form Tiktok-->
                                                         <div id="order-form">
                                                             <div class="container-login ">
                                                                 <div class="form_message form_message--error">
