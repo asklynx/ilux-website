@@ -19,6 +19,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/offer.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
+    <link href="css/modal.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -157,7 +158,7 @@
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
                                             data-target="#orderfacebookModal"> Boost Now! </button>
 
-                                        <!-- Facebook Modal -->
+                                        <!-- Youtube Modal -->
                                         <div class="modal fade" id="orderfacebookModal" tabindex="-1"
                                             aria-labelledby="orderfacebookModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
@@ -170,7 +171,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <!--Order Form FB-->
+                                                        <!--Order Form Youtube-->
                                                         <div id="order-form">
                                                             <div class="container-login ">
                                                                 <div class="form_message form_message--error">
