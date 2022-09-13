@@ -19,6 +19,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/offer.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
+    <link href="css/modal.css" rel="stylesheet" />
 
 </head>
 
@@ -164,16 +165,14 @@
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="facebookModalLabel">FACEBOOK</h5>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <!--Order Form FB-->
-                                                        <div id="order-form">
-                                                            <div class="container-login ">
+                                                        <div id="order-form"  >
+                                                            <div class="container-login">
                                                                 <div class="form_message form_message--error">
                                                                     @if (Session::get('status') == false)
                                                                         {{ Session::get('message') }}
