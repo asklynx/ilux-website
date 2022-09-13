@@ -19,6 +19,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/offer.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
+    <link href="css/modal.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -157,21 +158,19 @@
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
                                             data-target="#orderinstagramModal"> Boost Now! </button>
 
-                                        <!-- Facebook Modal -->
+                                        <!-- IG Modal -->
                                         <div class="modal fade" id="orderinstagramModal" tabindex="-1"
                                             aria-labelledby="orderinstagramModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="instagramModalLabel">INSTAGRAM
-                                                        </h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <!--Order Form FB-->
+                                                        <!--Order Form IG-->
                                                         <div id="order-form">
                                                             <div class="container-login ">
                                                                 <div class="form_message form_message--error">
