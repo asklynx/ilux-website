@@ -199,6 +199,25 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         return view('add-fund');
     });
 
+    Route::get('/offer-facebook', function () {
+        return view('offer-facebook');
+    });
+
+    Route::get('/offer-instagram', function () {
+        return view('offer-instagram');
+    });
+
+    Route::get('/offer-tiktok', function () {
+        return view('offer-tiktok');
+    });
+
+    Route::get('/offer-youtube', function () {
+        return view('offer-youtube');
+    });
+
+    Route::get('/offer-twitter', function () {
+        return view('offer-twitter');
+    });
 
 });
 
