@@ -84,10 +84,15 @@ class OrderController extends Controller
         }
     }
 
-    public function calcPrice($serviceName, $quantity)
+   public function calcPrice()
     {
-        $price = Service::where('service_name', $serviceName)->value('price');
-        return $price * $quantity;
+        //if($x == 'facebook_reacts')
+        //{
+           // $x =
+       // }
+
+        $data = Service::where('service_name','facebook_reacts')->get();
+        return view('offer-facebook',['data'=>$data]);
     }
 
     public function showUserOrders()

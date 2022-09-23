@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Price;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Redirect;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -199,9 +202,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         return view('add-fund');
     });
 
-    Route::get('/offer-facebook', function () {
-        return view('offer-facebook');
-    });
+    Route::get('/offer-facebook', [OrderController::class,'calcPrice']);{
+        return view ('offer-facebook');
+    }
 
     Route::get('/offer-instagram', function () {
         return view('offer-instagram');
@@ -218,6 +221,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/offer-twitter', function () {
         return view('offer-twitter');
     });
+
+
+
 
 });
 

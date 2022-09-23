@@ -234,11 +234,16 @@
                                                                             placeholder="Quantity">
 
                                                                     </div>
+
+
+                                                                    @foreach ($data as $i)
                                                                     <div class="form_input-group">
                                                                         <label type="number" name="price"
-                                                                            class="form_input">Price</label>
+                                                                            class="form_input">{{$i->price}}</label>
 
                                                                     </div>
+                                                                    @endforeach
+
                                                                     <button class="form_button mb-3" type="submit"
                                                                         href="/dashboard">Order Now</button>
                                                                     <p class="form_text">
