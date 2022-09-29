@@ -114,6 +114,10 @@
                                         placeholder="Service Name">
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" name="service_desc"
+                                        placeholder="Service Description">
+                                </div>
+                                <div class="form-group">
                                     <input type="text" class="form-control form-control-user" name="turbo_service_id"
                                         placeholder="Turbo Service ID ">
                                 </div>
@@ -327,6 +331,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Service Name</th>
+                                            <th>Service Desciption</th>
                                             <th>Turbo Service ID</th>
                                             <th>Price</th>
                                             <th>Created at</th>
@@ -342,6 +347,7 @@
                                             <tr>
                                                 <td>{{ $record->id }}</td>
                                                 <td>{{ $record->service_name }}</td>
+                                                <td>{{ $record->service_desc }}</td>
                                                 <td>{{ $record->turbo_service_id }}</td>
                                                 <td>{{ $record->price }}</td>
                                                 <td>{{ $record->created_at }}</td>

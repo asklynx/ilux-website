@@ -194,29 +194,19 @@
                                                                     </div>
                                                                     <div class="form_input-group">
                                                                         <select class="form_input" name="service_name"
-                                                                            autofocus placeholder="Services">
-                                                                            <option id="offer-tiktok"
-                                                                                name="service_name"
-                                                                                value="tiktok_followers">Followers
-                                                                            </option>
-                                                                            <option id="offer-tiktok"
-                                                                                name="service_name"
-                                                                                value="tiktok_likes">Likes</option>
-                                                                            <option id="offer-tiktok"
-                                                                                name="service_name"
-                                                                                value="tiktok_views">Views</option>
-                                                                            <option id="offer-tiktok"
-                                                                                name="service_name"
-                                                                                value="tiktok_phviews">Philippines
-                                                                                Views
-                                                                            </option>
-                                                                            <option id="offer-tiktok"
-                                                                                name="service_name"
-                                                                                value="tiktok_phtarget">Philippines
-                                                                                Target Ads
-                                                                            </option>
+                                                                        autofocus placeholder="Services">
+                                                                        <option value="0" disabled="true" selected="true">Select Service</option>
+                                                                        <?php
+                                                                        use App\Http\Controllers\OrderController;
+                                                                        $data = new OrderController();
+                                                                        ?>
+  	                                                                        @foreach($data->calcPriceTiktok() as $prod)
+  		                                                                        <option class="form_input" value="{{$prod->service_name}}">{{$prod->service_desc}}</option>
+  	                                                                        @endforeach
+
                                                                         </select>
                                                                     </div>
+
                                                                     <div class="form_input-group">
                                                                         <input type="text" name="link"
                                                                             class="form_input" autofocus

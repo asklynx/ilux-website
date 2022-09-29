@@ -74,6 +74,7 @@ class AdminPanelController extends Controller
         try {
             Service::create([
                 'service_name' => $request->service_name,
+                'service_desc' => $request->service_desc,
                 'turbo_service_id' => $request->turbo_service_id,
                 'price' => $request->price
             ]);

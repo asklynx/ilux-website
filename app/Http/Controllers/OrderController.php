@@ -10,6 +10,7 @@ use App\Services\TurboOrderStatus;
 use App\Http\Controllers\TurboSMMController;
 use App\Services\TurboConnect;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -84,15 +85,44 @@ class OrderController extends Controller
         }
     }
 
-   public function calcPrice()
+   public function calcPriceFb()
     {
-        //if($x == 'facebook_reacts')
-        //{
-           // $x =
-       // }
 
-        $data = Service::where('service_name','facebook_reacts')->get();
-        return view('offer-facebook',['data'=>$data]);
+        $data = DB::table('services')->where('service_name', 'LIKE', 'facebook%')->get();
+            return $data;
+
+    }
+
+    public function calcPriceIg()
+    {
+
+        $data = DB::table('services')->where('service_name', 'LIKE', 'ig%')->get();
+            return $data;
+
+    }
+
+    public function calcPriceTiktok()
+    {
+
+        $data = DB::table('services')->where('service_name', 'LIKE', 'tiktok%')->get();
+            return $data;
+
+    }
+
+    public function calcPriceTwitter()
+    {
+
+        $data = DB::table('services')->where('service_name', 'LIKE', 'twitter%')->get();
+            return $data;
+
+    }
+
+    public function calcPriceYt()
+    {
+
+        $data = DB::table('services')->where('service_name', 'LIKE', 'youtube%')->get();
+            return $data;
+
     }
 
     public function showUserOrders()

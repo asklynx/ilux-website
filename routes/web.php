@@ -202,9 +202,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         return view('add-fund');
     });
 
-    Route::get('/offer-facebook', [OrderController::class,'calcPrice']);{
-        return view ('offer-facebook');
-    }
+    Route::get('/offer-facebook', function () {
+        return view('offer-facebook');
+    });
 
     Route::get('/offer-instagram', function () {
         return view('offer-instagram');
@@ -221,6 +221,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/offer-twitter', function () {
         return view('offer-twitter');
     });
+
+
+
+
+
+
+
 
 
 

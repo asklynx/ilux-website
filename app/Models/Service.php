@@ -15,6 +15,7 @@ class Service extends Model
 
     protected $fillable = [
         'service_name',
+        'service_desc',
         'turbo_service_id',
         'price'
     ];

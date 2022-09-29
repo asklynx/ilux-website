@@ -191,15 +191,22 @@
                                                                     <h3 class="form_title">Instagram</h3>
                                                                     <div class="form_message form_message--error">
                                                                     </div>
+
                                                                     <div class="form_input-group">
                                                                         <select class="form_input" name="service_name"
-                                                                            autofocus placeholder="Services">
-                                                                            <option id="offer-ig" name="service_name"
-                                                                                value="ig_followers">Followers</option>
-                                                                            <option id="offer-ig" name="service_name"
-                                                                                value="ig_likes">Likes</option>
+                                                                        autofocus placeholder="Services">
+                                                                        <option value="0" disabled="true" selected="true">Select Service</option>
+                                                                        <?php
+                                                                        use App\Http\Controllers\OrderController;
+                                                                        $data = new OrderController();
+                                                                        ?>
+  	                                                                        @foreach($data->calcPriceIg() as $prod)
+  		                                                                        <option class="form_input" value="{{$prod->service_name}}">{{$prod->service_desc}}</option>
+  	                                                                        @endforeach
+
                                                                         </select>
                                                                     </div>
+
                                                                     <div class="form_input-group">
                                                                         <input type="text" name="link"
                                                                             class="form_input" autofocus
@@ -214,8 +221,14 @@
 
                                                                     </div>
                                                                     <div class="form_input-group">
+
+                                                                        @foreach ($data->calcPriceIg() as $p)
+
                                                                         <label type="number" name="price"
-                                                                            class="form_input">Price</label>
+                                                                        class="form_input">{{$p->price}}</label>
+
+                                                                        @endforeach
+
 
                                                                     </div>
                                                                     <button class="form_button mb-3" type="submit"

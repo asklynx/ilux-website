@@ -192,35 +192,23 @@
                                                                     <h3 class="form_title">Facebook</h3>
                                                                     <div class="form_message form_message--error">
                                                                     </div>
+
+
                                                                     <div class="form_input-group">
                                                                         <select class="form_input" name="service_name"
-                                                                            autofocus placeholder="Services">
-                                                                            <option id="offer-facebook"
-                                                                                name="service_name"
-                                                                                value="facebook_page-likes-and-followers">
-                                                                                Page Likes and Followers</option>
-                                                                            <option id="offer-facebook"
-                                                                                name="service_name"
-                                                                                value="facebook_reacts">Reacts</option>
-                                                                            <option id="offer-facebook"
-                                                                                name="service_name"
-                                                                                value="facebook_views">Views</option>
-                                                                            <option id="offer-facebook"
-                                                                                name="service_name"
-                                                                                value="facebook_group">Group
-                                                                                Member/Events
-                                                                            </option>
-                                                                            <option id="offer-facebook"
-                                                                                name="service_name"
-                                                                                value="facebook_events">Event Join
-                                                                            </option>
-                                                                            <option id="offer-facebook"
-                                                                                name="service_name"
-                                                                                value="facebook_live-react">Livestream
-                                                                                Reacts
-                                                                            </option>
+                                                                        autofocus placeholder="Services">
+                                                                        <option value="0" disabled="true" selected="true">Select Service</option>
+                                                                        <?php
+                                                                        use App\Http\Controllers\OrderController;
+                                                                        $data = new OrderController();
+                                                                        ?>
+  	                                                                        @foreach($data->calcPriceFb() as $prod)
+  		                                                                        <option class="form_input" value="{{$prod->service_name}}">{{$prod->service_desc}}</option>
+  	                                                                        @endforeach
+
                                                                         </select>
                                                                     </div>
+
                                                                     <div class="form_input-group">
                                                                         <input type="text" name="link"
                                                                             class="form_input" autofocus
@@ -236,13 +224,13 @@
                                                                     </div>
 
 
-                                                                    @foreach ($data as $i)
+
                                                                     <div class="form_input-group">
                                                                         <label type="number" name="price"
-                                                                            class="form_input">{{$i->price}}</label>
+                                                                            class="form_input">Price</label>
 
                                                                     </div>
-                                                                    @endforeach
+
 
                                                                     <button class="form_button mb-3" type="submit"
                                                                         href="/dashboard">Order Now</button>
