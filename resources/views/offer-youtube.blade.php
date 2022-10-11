@@ -164,7 +164,6 @@
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="facebookModalLabel">YOUTUBE</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
@@ -215,24 +214,24 @@
 
                                                                     </div>
                                                                     <div class="form_input-group">
-                                                                        <script type="text/javascript">
-                                                                            $(document).ready(function(){
-                                                                                $(document).on('change','.service_name',function () {
-                                                                                    var service_price=$(this).val();
-                                                                                     var a=$(this).parent();
-                                                                                     $('#service_price').text(service_price);
-
-                                                                                });
-
-                                                                            });
-                                                                        </script>
                                                                         <input type="number" name="quantity"
-                                                                            class="form_input" min="100"
+                                                                            class="form_input qty" min="100"
                                                                             max="100000" step="100" autofocus
                                                                             placeholder="Quantity">
 
                                                                     </div>
                                                                     <div class="form_input-group">
+                                                                        <script type="text/javascript">
+                                                                            $(document).ready(function(){
+                                                                                $(document).on('change','.service_name',function () {
+                                                                                    var service_price=$(this).val();
+                                                                                     var a=$(this).parent();
+                                                                                     $('#service_price').text("10" * service_price);
+
+                                                                                });
+
+                                                                            });
+                                                                        </script>
                                                                         <label type="number" name="price"
                                                                         class="service_price" id="service_price">Price</label>
                                                                     </div>
