@@ -193,7 +193,7 @@
                                                                     <div class="form_message form_message--error">
                                                                     </div>
                                                                     <div class="form_input-group">
-                                                                        <select class="form_input" name="service_name"
+                                                                        <select class="form_input service_name" name="service_name"
                                                                         autofocus placeholder="Services">
                                                                         <option value="0" disabled="true" selected="true">Select Service</option>
                                                                         <?php
@@ -223,7 +223,7 @@
                                                                     <div class="form_input-group">
                                                                         <script type="text/javascript">
                                                                             $(document).ready(function(){
-                                                                                $(document).on('change','.form_input',function () {
+                                                                                $(document).on('change','.service_name',function () {
                                                                                     var service_price=$(this).val();
                                                                                      var a=$(this).parent();
                                                                                      $('#service_price').text(service_price);
