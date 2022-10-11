@@ -201,12 +201,13 @@
                                                                         use App\Http\Controllers\OrderController;
                                                                         $data = new OrderController();
                                                                         ?>
-  	                                                                        @foreach($data->calcPriceYt() as $prod)
-  		                                                                        <option class="form_input" value="{{$prod->service_name}}">{{$prod->service_desc}}</option>
+  	                                                                        @foreach($data->calcPriceYt() as $service)
+                                                                              <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
   	                                                                        @endforeach
 
                                                                         </select>
                                                                     </div>
+
                                                                     <div class="form_input-group">
                                                                         <input type="text" name="link"
                                                                             class="form_input" autofocus
@@ -214,16 +215,26 @@
 
                                                                     </div>
                                                                     <div class="form_input-group">
+                                                                        <script type="text/javascript">
+                                                                            $(document).ready(function(){
+                                                                                $(document).on('change','.form_input',function () {
+                                                                                    var service_price=$(this).val();
+                                                                                     var a=$(this).parent();
+                                                                                     $('#service_price').text(service_price);
+
+                                                                                });
+
+                                                                            });
+                                                                        </script>
                                                                         <input type="number" name="quantity"
                                                                             class="form_input" min="100"
-                                                                            max="50000" step="100" autofocus
+                                                                            max="100000" step="100" autofocus
                                                                             placeholder="Quantity">
 
                                                                     </div>
                                                                     <div class="form_input-group">
                                                                         <label type="number" name="price"
-                                                                            class="form_input">Price</label>
-
+                                                                        class="service_price" id="service_price">Price</label>
                                                                     </div>
                                                                     <button class="form_button mb-3" type="submit"
                                                                         href="/dashboard">Order Now</button>

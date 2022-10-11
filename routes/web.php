@@ -232,6 +232,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 
+
+
 });
 
 //admin routes

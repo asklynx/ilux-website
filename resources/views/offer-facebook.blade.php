@@ -202,8 +202,8 @@
                                                                         use App\Http\Controllers\OrderController;
                                                                         $data = new OrderController();
                                                                         ?>
-  	                                                                        @foreach($data->calcPriceFb() as $prod)
-  		                                                                        <option class="form_input" value="{{$prod->service_name}}">{{$prod->service_desc}}</option>
+  	                                                                        @foreach($data->calcPriceFb() as $service)
+  		                                                                        <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
   	                                                                        @endforeach
 
                                                                         </select>
@@ -223,15 +223,21 @@
 
                                                                     </div>
 
-
-
                                                                     <div class="form_input-group">
+                                                                        <script type="text/javascript">
+                                                                            $(document).ready(function(){
+                                                                                $(document).on('change','.form_input',function () {
+                                                                                    var service_price=$(this).val();
+                                                                                     var a=$(this).parent();
+                                                                                     $('#service_price').text(service_price);
+
+                                                                                });
+
+                                                                            });
+                                                                        </script>
                                                                         <label type="number" name="price"
-                                                                            class="form_input">Price</label>
-
+                                                                        class="service_price" id="service_price">Price</label>
                                                                     </div>
-
-
                                                                     <button class="form_button mb-3" type="submit"
                                                                         href="/dashboard">Order Now</button>
                                                                     <p class="form_text">
@@ -270,6 +276,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

@@ -90,7 +90,6 @@ class OrderController extends Controller
 
         $data = DB::table('services')->where('service_name', 'LIKE', 'facebook%')->get();
             return $data;
-
     }
 
     public function calcPriceIg()

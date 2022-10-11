@@ -200,8 +200,8 @@
                                                                         use App\Http\Controllers\OrderController;
                                                                         $data = new OrderController();
                                                                         ?>
-  	                                                                        @foreach($data->calcPriceTiktok() as $prod)
-  		                                                                        <option class="form_input" value="{{$prod->service_name}}">{{$prod->service_desc}}</option>
+  	                                                                        @foreach($data->calcPriceTiktok() as $service)
+                                                                              <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
   	                                                                        @endforeach
 
                                                                         </select>
@@ -221,9 +221,19 @@
 
                                                                     </div>
                                                                     <div class="form_input-group">
-                                                                        <label type="number" name="price"
-                                                                            class="form_input">Price</label>
+                                                                        <script type="text/javascript">
+                                                                            $(document).ready(function(){
+                                                                                $(document).on('change','.form_input',function () {
+                                                                                    var service_price=$(this).val();
+                                                                                     var a=$(this).parent();
+                                                                                     $('#service_price').text(service_price);
 
+                                                                                });
+
+                                                                            });
+                                                                        </script>
+                                                                        <label type="number" name="price"
+                                                                        class="service_price" id="service_price">Price</label>
                                                                     </div>
                                                                     <button class="form_button mb-3" type="submit"
                                                                         href="/dashboard">Order Now</button>
