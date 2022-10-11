@@ -215,18 +215,23 @@
                                                                     </div>
                                                                     <div class="form_input-group">
                                                                         <input type="number" name="quantity"
-                                                                            class="form_input qty" min="100"
+                                                                            class="form_input quantity" min="100"
                                                                             max="100000" step="100" autofocus
                                                                             placeholder="Quantity">
 
                                                                     </div>
                                                                     <div class="form_input-group">
                                                                         <script type="text/javascript">
-                                                                            $(document).ready(function(){
+                                                                          $(document).ready(function(){
                                                                                 $(document).on('change','.service_name',function () {
                                                                                     var service_price=$(this).val();
                                                                                      var a=$(this).parent();
-                                                                                     $('#service_price').text("10" * service_price);
+                                                                                     $(document).on('change','.quantity',function () {
+                                                                                        var quantity=$(this).val();
+                                                                                        var a=$(this).parent();
+                                                                                        $('#service_price').text(quantity * service_price);
+                                                                                     });
+
 
                                                                                 });
 
