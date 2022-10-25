@@ -198,7 +198,7 @@
                                                                         <option value="0" disabled="true" selected="true">Select Service</option>
                                                                         <?php
                                                                         use App\Http\Controllers\OrderController;
-                                                                        $data = new OrderController();
+                                                                        $ig = new OrderController();
                                                                         ?>
   	                                                                        @foreach($ig->calcPrice() as $service)
                                                                               <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
