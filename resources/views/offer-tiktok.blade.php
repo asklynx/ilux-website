@@ -198,9 +198,9 @@
                                                                         <option value="0" disabled="true" selected="true">Select Service</option>
                                                                         <?php
                                                                         use App\Http\Controllers\OrderController;
-                                                                        $data = new OrderController();
+                                                                        $tiktok = new OrderController();
                                                                         ?>
-  	                                                                        @foreach($data->calcPriceTiktok() as $service)
+  	                                                                        @foreach($tiktok->calcPrice() as $service)
                                                                               <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
   	                                                                        @endforeach
 

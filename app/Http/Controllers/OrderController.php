@@ -14,7 +14,14 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-    public function process(Request $request)
+
+    public function process (Request $request){
+        $orderTotal = $this->calcPrice($request->service_name, $request->quantity);
+        return back()->with([
+            'status' => $orderTotal,
+        ]);
+    }
+   /* public function process(Request $request)
     {
         try {
             $orderTotal = $this->calcPrice($request->service_name, $request->quantity);
@@ -83,16 +90,39 @@ class OrderController extends Controller
                 'message' => $th->getMessage(),
             ], 500);
         }
-    }
+    } */
 
-   public function calcPriceFb()
+
+   public function calcPrice()
+   {
+
+       $fb = DB::table('services')->where('service_name', 'LIKE', 'facebook%')->get();
+           return $fb;
+
+       $ig = DB::table('services')->where('service_name', 'LIKE', 'ig%')->get();
+           return $ig;
+
+       $tiktok = DB::table('services')->where('service_name', 'LIKE', 'tiktok%')->get();
+            return $tiktok;
+
+       $tiwtter = DB::table('services')->where('service_name', 'LIKE', 'twitter%')->get();
+            return $twitter;
+
+       $yt = DB::table('services')->where('service_name', 'LIKE', 'youtube%')->get();
+            return $yt;
+
+   }
+
+
+   /* public function calcPriceFb()
     {
 
         $data = DB::table('services')->where('service_name', 'LIKE', 'facebook%')->get();
             return $data;
     }
 
-    public function calcPriceIg()
+
+   public function calcPriceIg()
     {
 
         $data = DB::table('services')->where('service_name', 'LIKE', 'ig%')->get();
@@ -122,7 +152,7 @@ class OrderController extends Controller
         $data = DB::table('services')->where('service_name', 'LIKE', 'youtube%')->get();
             return $data;
 
-    }
+    } */
 
     public function showUserOrders()
     {

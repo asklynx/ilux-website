@@ -200,9 +200,9 @@
                                                                         <option value="0" disabled="true" selected="true">Select Service</option>
                                                                         <?php
                                                                         use App\Http\Controllers\OrderController;
-                                                                        $data = new OrderController();
+                                                                        $fb = new OrderController();
                                                                         ?>
-  	                                                                        @foreach($data->calcPriceFb() as $service)
+  	                                                                        @foreach($fb->calcPrice() as $service)
   		                                                                        <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
   	                                                                        @endforeach
 

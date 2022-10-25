@@ -200,7 +200,7 @@
                                                                         use App\Http\Controllers\OrderController;
                                                                         $data = new OrderController();
                                                                         ?>
-  	                                                                        @foreach($data->calcPriceIg() as $service)
+  	                                                                        @foreach($ig->calcPrice() as $service)
                                                                               <option class="form_input" value="{{$service->price}}">{{$service->service_desc}}</option>
   	                                                                        @endforeach
 
